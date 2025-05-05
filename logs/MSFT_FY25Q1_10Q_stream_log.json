@@ -1,0 +1,45 @@
+[
+  {
+    "node": "step",
+    "updates": {
+      "extract_pdf": {
+        "pdf_path": "C:/Users/Yi/OneDrive/Desktop/UChicago25Spring/FinAgent/MSFT_FY25Q1_10Q.pdf",
+        "income_text": "",
+        "cashflow_text": "",
+        "mdna_text": "",
+        "title_page_text": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington,D.C.20549\nFORM 10-Q\n\u2612 QUARTERLYREPORTPURSUANTTOSECTION13OR15(d)OFTHESECURITIESEXCHANGEACTOF\n1934\nFortheQuarterlyPeriodEndedSeptember30,2024\nOR\nTRANSITIONREPORTPURSUANTTOSECTION13OR15(d)OFTHESECURITIESEXCHANGEACTOF\n\u2610\n1934\nFortheTransitionPeriodFrom to\nCommissionFileNumber001-37845\nMICROSOFT CORPORATION\nWASHINGTON 91-1144442\n(STATEOFINCORPORATION) (I.R.S.ID)\nONEMICROSOFTWAY,REDMOND,WASHINGTON98052-6399\n(425)882-8080\nwww.microsoft.com/investor\nSecuritiesregisteredpursuanttoSection12(b)oftheAct:\nTitleofeachclass TradingSymbol Nameofexchangeonwhichregistered\nCommonstock,$0.00000625parvaluepershare MSFT NASDAQ\n3.125%Notesdue2028 MSFT NASDAQ\n2.625%Notesdue2033 MSFT NASDAQ\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities\nExchangeActof1934duringthepreceding12months(orforsuchshorterperiodthattheregistrantwasrequiredtofilesuchreports),and\n(2)hasbeensubjecttosuchfilingrequirementsforthepast90days. Yes \u2612 No \u2610\nIndicatebycheckmarkwhethertheregistranthassubmittedelectronicallyeveryInteractiveDataFilerequiredtobesubmittedpursuantto\nRule 405 of Regulation S-T (\u00a7232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was\nrequiredtosubmitsuchfiles). Yes \u2612 No \u2610\nIndicatebycheckmarkwhethertheregistrantisalargeacceleratedfiler,anacceleratedfiler,anon-acceleratedfiler,asmallerreporting\ncompany,oranemerginggrowthcompany.Seethedefinitionsof\u201clargeacceleratedfiler,\u201d\u201cacceleratedfiler,\u201d\u201csmallerreportingcompany,\u201d\nand\u201cemerginggrowthcompany\u201dinRule12b-2oftheExchangeAct.\nLargeAcceleratedFiler AcceleratedFiler\u2610\n\u2612\nNon-acceleratedFiler\u2610 SmallerReportingCompany\u2610\nEmergingGrowthCompany\u2610\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for\ncomplyingwithanyneworrevisedfinancialaccountingstandardsprovidedpursuanttoSection13(a)oftheExchangeAct.\n\u2610\nIndicatebycheckmarkwhethertheregistrantisashellcompany(asdefinedinRule12b-2oftheExchangeAct). Yes \u2610 No \u2612\nIndicatethenumberofsharesoutstandingofeachoftheissuer\u2019sclassesofcommonstock,asofthelatestpracticabledate.\nClass OutstandingasofOctober24,2024\nCommonStock,$0.00000625parvaluepershare 7,434,880,776shares"
+      }
+    }
+  },
+  {
+    "node": "step",
+    "updates": {
+      "analyze_sections": {
+        "pdf_path": "C:/Users/Yi/OneDrive/Desktop/UChicago25Spring/FinAgent/MSFT_FY25Q1_10Q.pdf",
+        "income_text": "",
+        "cashflow_text": "",
+        "mdna_text": "",
+        "title_page_text": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington,D.C.20549\nFORM 10-Q\n\u2612 QUARTERLYREPORTPURSUANTTOSECTION13OR15(d)OFTHESECURITIESEXCHANGEACTOF\n1934\nFortheQuarterlyPeriodEndedSeptember30,2024\nOR\nTRANSITIONREPORTPURSUANTTOSECTION13OR15(d)OFTHESECURITIESEXCHANGEACTOF\n\u2610\n1934\nFortheTransitionPeriodFrom to\nCommissionFileNumber001-37845\nMICROSOFT CORPORATION\nWASHINGTON 91-1144442\n(STATEOFINCORPORATION) (I.R.S.ID)\nONEMICROSOFTWAY,REDMOND,WASHINGTON98052-6399\n(425)882-8080\nwww.microsoft.com/investor\nSecuritiesregisteredpursuanttoSection12(b)oftheAct:\nTitleofeachclass TradingSymbol Nameofexchangeonwhichregistered\nCommonstock,$0.00000625parvaluepershare MSFT NASDAQ\n3.125%Notesdue2028 MSFT NASDAQ\n2.625%Notesdue2033 MSFT NASDAQ\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities\nExchangeActof1934duringthepreceding12months(orforsuchshorterperiodthattheregistrantwasrequiredtofilesuchreports),and\n(2)hasbeensubjecttosuchfilingrequirementsforthepast90days. Yes \u2612 No \u2610\nIndicatebycheckmarkwhethertheregistranthassubmittedelectronicallyeveryInteractiveDataFilerequiredtobesubmittedpursuantto\nRule 405 of Regulation S-T (\u00a7232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was\nrequiredtosubmitsuchfiles). Yes \u2612 No \u2610\nIndicatebycheckmarkwhethertheregistrantisalargeacceleratedfiler,anacceleratedfiler,anon-acceleratedfiler,asmallerreporting\ncompany,oranemerginggrowthcompany.Seethedefinitionsof\u201clargeacceleratedfiler,\u201d\u201cacceleratedfiler,\u201d\u201csmallerreportingcompany,\u201d\nand\u201cemerginggrowthcompany\u201dinRule12b-2oftheExchangeAct.\nLargeAcceleratedFiler AcceleratedFiler\u2610\n\u2612\nNon-acceleratedFiler\u2610 SmallerReportingCompany\u2610\nEmergingGrowthCompany\u2610\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for\ncomplyingwithanyneworrevisedfinancialaccountingstandardsprovidedpursuanttoSection13(a)oftheExchangeAct.\n\u2610\nIndicatebycheckmarkwhethertheregistrantisashellcompany(asdefinedinRule12b-2oftheExchangeAct). Yes \u2610 No \u2612\nIndicatethenumberofsharesoutstandingofeachoftheissuer\u2019sclassesofcommonstock,asofthelatestpracticabledate.\nClass OutstandingasofOctober24,2024\nCommonStock,$0.00000625parvaluepershare 7,434,880,776shares",
+        "analysis_income": "No data found.",
+        "analysis_cashflow": "No data found.",
+        "analysis_mdna": "No data found."
+      }
+    }
+  },
+  {
+    "node": "step",
+    "updates": {
+      "extract_title": {
+        "pdf_path": "C:/Users/Yi/OneDrive/Desktop/UChicago25Spring/FinAgent/MSFT_FY25Q1_10Q.pdf",
+        "income_text": "",
+        "cashflow_text": "",
+        "mdna_text": "",
+        "title_page_text": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington,D.C.20549\nFORM 10-Q\n\u2612 QUARTERLYREPORTPURSUANTTOSECTION13OR15(d)OFTHESECURITIESEXCHANGEACTOF\n1934\nFortheQuarterlyPeriodEndedSeptember30,2024\nOR\nTRANSITIONREPORTPURSUANTTOSECTION13OR15(d)OFTHESECURITIESEXCHANGEACTOF\n\u2610\n1934\nFortheTransitionPeriodFrom to\nCommissionFileNumber001-37845\nMICROSOFT CORPORATION\nWASHINGTON 91-1144442\n(STATEOFINCORPORATION) (I.R.S.ID)\nONEMICROSOFTWAY,REDMOND,WASHINGTON98052-6399\n(425)882-8080\nwww.microsoft.com/investor\nSecuritiesregisteredpursuanttoSection12(b)oftheAct:\nTitleofeachclass TradingSymbol Nameofexchangeonwhichregistered\nCommonstock,$0.00000625parvaluepershare MSFT NASDAQ\n3.125%Notesdue2028 MSFT NASDAQ\n2.625%Notesdue2033 MSFT NASDAQ\nIndicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities\nExchangeActof1934duringthepreceding12months(orforsuchshorterperiodthattheregistrantwasrequiredtofilesuchreports),and\n(2)hasbeensubjecttosuchfilingrequirementsforthepast90days. Yes \u2612 No \u2610\nIndicatebycheckmarkwhethertheregistranthassubmittedelectronicallyeveryInteractiveDataFilerequiredtobesubmittedpursuantto\nRule 405 of Regulation S-T (\u00a7232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was\nrequiredtosubmitsuchfiles). Yes \u2612 No \u2610\nIndicatebycheckmarkwhethertheregistrantisalargeacceleratedfiler,anacceleratedfiler,anon-acceleratedfiler,asmallerreporting\ncompany,oranemerginggrowthcompany.Seethedefinitionsof\u201clargeacceleratedfiler,\u201d\u201cacceleratedfiler,\u201d\u201csmallerreportingcompany,\u201d\nand\u201cemerginggrowthcompany\u201dinRule12b-2oftheExchangeAct.\nLargeAcceleratedFiler AcceleratedFiler\u2610\n\u2612\nNon-acceleratedFiler\u2610 SmallerReportingCompany\u2610\nEmergingGrowthCompany\u2610\nIf an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for\ncomplyingwithanyneworrevisedfinancialaccountingstandardsprovidedpursuanttoSection13(a)oftheExchangeAct.\n\u2610\nIndicatebycheckmarkwhethertheregistrantisashellcompany(asdefinedinRule12b-2oftheExchangeAct). Yes \u2610 No \u2612\nIndicatethenumberofsharesoutstandingofeachoftheissuer\u2019sclassesofcommonstock,asofthelatestpracticabledate.\nClass OutstandingasofOctober24,2024\nCommonStock,$0.00000625parvaluepershare 7,434,880,776shares",
+        "analysis_income": "No data found.",
+        "analysis_cashflow": "No data found.",
+        "analysis_mdna": "No data found.",
+        "file_title": "I'm sorry, but I need the actual text from the first page of the company's 10-K or 10-Q SEC filing to generate the standardized file name. Please provide the text so I can assist you further."
+      }
+    }
+  }
+]

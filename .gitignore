@@ -21,14 +21,14 @@ ENV/
 
 # Files folder that might contain large PDFs
 rawfiles/
-files/
+# files/
 
 # Logs
-logs/
-*.log
+# logs/
+# *.log
 
 # Output files
-output/
+# output/
 
 # OS specific
 .DS_Store 
