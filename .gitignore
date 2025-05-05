@@ -1,0 +1,34 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+test.ipynb
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Files folder that might contain large PDFs
+rawfiles/
+files/
+
+# Logs
+logs/
+*.log
+
+# Output files
+output/
+
+# OS specific
+.DS_Store 
