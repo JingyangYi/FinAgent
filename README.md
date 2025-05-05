@@ -42,8 +42,7 @@ The recommended way to run FinAgent is using the run_finagent.py script in the m
 # Run using the run script (from the main FinAgent directory)
 python run_finagent.py
 
-# Or with a specific PDF file
-python run_finagent.py files/your-document.pdf
+# the pdf_file path can be modified in run_finagent.py
 ```
 
 When prompted, enter the path to a 10-K or 10-Q PDF file. The system will:
@@ -53,22 +52,10 @@ When prompted, enter the path to a 10-K or 10-Q PDF file. The system will:
 3. Generate an analysis of the Income Statement, Cash Flow Statement, and MD&A
 4. Output a markdown report in the `output/` folder
 
-### Alternative methods (if needed)
 
-You can also run the tool as a Python module (from the main directory):
+## Provided files
 
-```bash
-python -m finagent
-```
-
-Or import the functionality in your own Python code:
-
-```python
-from finagent import generate_financial_report
-
-# Generate a financial report
-result = generate_financial_report("path/to/your/file.pdf")
-```
+There are a few 10Q files in `files`. Right now the agent does not support 10K files
 
 ## Key Components
 
