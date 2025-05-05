@@ -7,59 +7,43 @@ A modular financial analysis system that extracts and analyzes financial informa
 The project follows a modular architecture:
 
 ```
-finagent/
+finagent/            # Package directory
 ├── models/          # Pydantic data models
 ├── providers/       # LLM providers and configurations
 ├── extractors/      # PDF and section extraction logic
 ├── analyzers/       # Financial analysis components
 ├── workflows/       # Graph definitions and workflow
 ├── main.py          # Main entry point
-└── README.md        # This file
+└── README.md        # Package documentation
+run_finagent.py      # Main runner script
 ```
 
 ## Installation
 
-### Install from local directory
-
-```bash
-# Clone the repository
-git clone https://your-repository-url.git
-cd your-repository-dir
-
-# Install the package in development mode
-pip install -e .
-```
-
-### Install dependencies only
+### Install dependencies
 
 ```bash
 # Install dependencies
 pip install -r finagent/requirements.txt
 ```
 
+### Optional: Install package in development mode
+
+```bash
+# Install the package in development mode (not required for normal use)
+pip install -e .
+```
+
 ## How to Run
 
-### As a module
+The recommended way to run FinAgent is using the run_finagent.py script in the main directory:
 
 ```bash
-# Run directly as a Python module
-python -m finagent [path/to/your/file.pdf]
-```
+# Run using the run script (from the main FinAgent directory)
+python run_finagent.py
 
-### From Python code
-
-```python
-from finagent import generate_financial_report
-
-# Generate a financial report
-result = generate_financial_report("path/to/your/file.pdf")
-```
-
-### Using the run script
-
-```bash
-# Run using the run script
-python finagent/run.py [path/to/your/file.pdf]
+# Or with a specific PDF file
+python run_finagent.py files/your-document.pdf
 ```
 
 When prompted, enter the path to a 10-K or 10-Q PDF file. The system will:
@@ -68,6 +52,23 @@ When prompted, enter the path to a 10-K or 10-Q PDF file. The system will:
 2. Ask for any specific analysis requirements
 3. Generate an analysis of the Income Statement, Cash Flow Statement, and MD&A
 4. Output a markdown report in the `output/` folder
+
+### Alternative methods (if needed)
+
+You can also run the tool as a Python module (from the main directory):
+
+```bash
+python -m finagent
+```
+
+Or import the functionality in your own Python code:
+
+```python
+from finagent import generate_financial_report
+
+# Generate a financial report
+result = generate_financial_report("path/to/your/file.pdf")
+```
 
 ## Key Components
 
