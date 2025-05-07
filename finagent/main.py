@@ -18,7 +18,7 @@ def generate_financial_report(pdf_path: str):
     os.makedirs("logs", exist_ok=True)
     os.makedirs("output", exist_ok=True)
     
-    # Optional: Log the execution events for debugging
+    # # Optional: Log the execution events for debugging
     # stream_events = list(graph.stream({"pdf_path": pdf_path}))
     # with open(f"logs/{base_name}_stream_log.json", "w", encoding="utf-8") as logf:
     #     # Write out the raw AddableUpdatesDicts for inspection
@@ -30,6 +30,31 @@ def generate_financial_report(pdf_path: str):
     
     # Generate markdown report
     md_report = f"""# Financial Summary: {result['file_title']}
+
+## 🔍 Market Research
+"""
+    
+    # Add web search results based on what's available
+    if 'market_sentiment' in result and result['market_sentiment']:
+        md_report += f"""### Market Sentiment
+{result['market_sentiment']}
+
+"""
+    
+    if 'narrative_themes' in result and result['narrative_themes']:
+        md_report += f"""### Narrative Themes
+{result['narrative_themes']}
+
+"""
+    
+    if 'user_search_results' in result and result['user_search_results']:
+        md_report += f"""### Custom Research: {result['user_search_requirements']}
+{result['user_search_results']}
+
+"""
+    
+    # Add financial analysis
+    md_report += f"""---
 
 ## 📊 Income Statement
 {result['analysis_income']}

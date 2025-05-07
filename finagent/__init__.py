@@ -1,6 +1,7 @@
 """
 FinAgent - A modular financial analysis system for SEC filings
 """
+# The API keys will be loaded when importing any provider
 from finagent.workflows.graphs import graph, progress
 from finagent.models.state import FinancialState
 from finagent.main import generate_financial_report

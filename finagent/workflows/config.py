@@ -1,11 +1,21 @@
 prompt_template_analyze_income_statement = """
-You are a professional financial analyst. Given the extracted text from a company’s 10-Q or 10-K filing, perform a structured financial summary using the following two-step process:
+You are a professional financial analyst. Given the extracted text from a company's 10-Q or 10-K filing, perform a structured financial summary using the following two-step process:
+
+---
+
+**Market Context (from Web Research):**
+{{ Insert market sentiment }}
+
+**Narrative Themes (from Web Research):**
+{{ Insert narrative themes }}
+
+{{ Insert user search results }}
 
 ---
 
 **Step 1: Output a Markdown Table**
 
-Extract and report only the **most vital financial indicators** from the income statement and stockholders’ equity sections. Output a table in **standard `.md` format** with the following columns:
+Extract and report only the **most vital financial indicators** from the income statement and stockholders' equity sections. Output a table in **standard `.md` format** with the following columns:
 
 | Indicator | Prior Period | Current Period | YoY Change |
 
@@ -17,7 +27,7 @@ Include these indicators, if available:
 - Stock-Based Compensation  
 - Dividends Paid  
 - Other Comprehensive Income (OCI)  
-- Total Stockholders’ Equity  
+- Total Stockholders' Equity  
 
 > Format the table using markdown pipe (`|`) syntax. Do not use HTML or code blocks. Ensure the header and separator rows are included.
 
@@ -25,14 +35,15 @@ Compute YoY % or dollar changes if possible. If a value is not applicable or new
 
 ---
 
-**Step 2: Write 3 Bullet-Point Analyst Comments**
+**Step 2: Write 3-4 Bullet-Point Analyst Comments**
 
-Summarize in **3 concise and insightful bullet points** the key takeaways, focusing on:
-- Profitability trends  
-- Capital return strategies (buybacks, dividends)  
+Summarize in **3-4 concise and insightful bullet points** the key takeaways, focusing on:
+- Profitability trends and their alignment or divergence from market expectations (see web research)
+- Capital return strategies (buybacks, dividends) in the context of market sentiment
 - Changes in balance sheet strength or equity
+- How the financial results support or contradict the narrative themes identified in web research
 
-Avoid repetition and boilerplate text.
+Connect the financial results to market expectations and narratives from the web research where relevant.
 
 ---
 **User Requirements**:
@@ -43,7 +54,17 @@ Avoid repetition and boilerplate text.
 """
 
 prompt_template_analyze_cash_flow_statement = """
-You are a professional financial analyst. Given the extracted text from a company’s 10-Q or 10-K filing, perform a structured financial summary of the **Cash Flow Statement** using the following two-step process:
+You are a professional financial analyst. Given the extracted text from a company's 10-Q or 10-K filing, perform a structured financial summary of the **Cash Flow Statement** using the following two-step process:
+
+---
+
+**Market Context (from Web Research):**
+{{ Insert market sentiment }}
+
+**Narrative Themes (from Web Research):**
+{{ Insert narrative themes }}
+
+{{ Insert user search results }}
 
 ---
 
@@ -69,14 +90,15 @@ Compute YoY % or dollar changes if possible. Use `— *(New)*` if the item is ne
 
 ---
 
-**Step 2: Write 3 Bullet-Point Analyst Comments**
+**Step 2: Write 3-4 Bullet-Point Analyst Comments**
 
-Provide **3 concise and insightful bullet points** to summarize the company's cash flow situation. Focus on:
-- Core cash generation (Operating Cash Flow)
-- Capital allocation (CapEx, buybacks, dividends)
-- Liquidity or cash position changes (Net change in cash)
+Provide **3-4 concise and insightful bullet points** to summarize the company's cash flow situation. Focus on:
+- Core cash generation (Operating Cash Flow) and how it aligns with market expectations
+- Capital allocation (CapEx, buybacks, dividends) in the context of identified market themes
+- Liquidity or cash position changes
+- How the cash flow data supports or contradicts the narrative themes identified in web research
 
-Avoid generic statements; be precise and analytical.
+Reference specific insights from the web research where appropriate to provide market context.
 
 ---
 
@@ -89,25 +111,37 @@ Avoid generic statements; be precise and analytical.
 
 
 prompt_template_analyze_md_and_a = """
-You are a professional financial analyst. Given the full text of the "Management’s Discussion and Analysis of Financial Condition and Results of Operations" (MD&A) section from a 10-Q or 10-K filing, extract and report only the **most essential insights**.
+You are a professional financial analyst. Given the full text of the "Management's Discussion and Analysis of Financial Condition and Results of Operations" (MD&A) section from a 10-Q or 10-K filing, extract and report only the **most essential insights**.
+
+---
+
+**Market Context (from Web Research):**
+{{ Insert market sentiment }}
+
+**Narrative Themes (from Web Research):**
+{{ Insert narrative themes }}
+
+{{ Insert user search results }}
 
 ---
 
 **Your task:**
 
-- Write **no more than 5 bullet points**
+- Write **5-6 bullet points**
 - Each bullet should capture **one material insight only**
 - Focus on what truly matters to investors and decision-makers
+- Make connections between management's statements and market narratives
+- Highlight areas where management's perspective aligns with or diverges from market sentiment
 
 ---
 
 **Prioritize content such as:**
 
-- Key revenue drivers or segment performance  
+- Key revenue drivers or segment performance in the context of market expectations  
 - Profit margin trends or notable cost changes (e.g. R&D, infrastructure)  
 - Major shifts in capital allocation (e.g. buybacks, dividends, capex)  
-- Strategic product, AI, cloud, or business model developments  
-- Forward-looking statements or new risk disclosures
+- Strategic product, AI, cloud, or business model developments that relate to narrative themes from web research
+- Forward-looking statements or new risk disclosures and how they align with market sentiment
 
 ---
 
@@ -115,7 +149,7 @@ You are a professional financial analyst. Given the full text of the "Management
 
 ---
 
-**Output Format**: Bullet points only, in clear, precise language. Maximum of 5 points.
+**Output Format**: Bullet points only, in clear, precise language. Maximum of 6 points.
 
 ---
 
@@ -137,7 +171,7 @@ You are an intelligent document parser. Given the **first page** of a company's 
 **Rules:**
 - Use the official company name in lowercase and replace spaces with hyphens. (e.g., "Alphabet Inc." → `alphabet`)
 - Use `10q` or `10k` based on the type of filing (case-insensitive match).
-- Infer the **fiscal quarter** (e.g., `q1`, `q2`, etc.) from the **reporting period end date**, usually expressed as “Three months ended March 31, 2025” → `q1-2025`.
+- Infer the **fiscal quarter** (e.g., `q1`, `q2`, etc.) from the **reporting period end date**, usually expressed as "Three months ended March 31, 2025" → `q1-2025`.
 - If the filing does **not** mention a quarter but provides a **full-year period**, treat it as `q4-[year]`.
 - Do not include punctuation or special characters in the output — only lowercase letters, numbers, and hyphens.
 

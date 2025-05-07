@@ -2,6 +2,22 @@
 
 A modular financial analysis system that extracts and analyzes financial information from 10-K and 10-Q SEC filings.
 
+## API Keys Setup
+
+Before running the application, you need to set up your API keys:
+
+1. Fill in your API keys in the `finagent_keys.json` file in the project directory:
+   - `DEEPSEEK_API_KEY` (at least one of DeepSeek or OpenAI is required)
+   - `OPENAI_API_KEY` (at least one of DeepSeek or OpenAI is required)
+   - `TAVILY_API_KEY` (required for web search functionality)
+
+2. The application will automatically load these keys when it starts.
+
+You can obtain these API keys from:
+- DeepSeek: https://platform.deepseek.com/
+- OpenAI: https://platform.openai.com/
+- Tavily: https://tavily.com/
+
 ## Project Structure
 
 The project follows a modular architecture:
@@ -12,6 +28,7 @@ finagent/            # Package directory
 ├── providers/       # LLM providers and configurations
 ├── extractors/      # PDF and section extraction logic
 ├── analyzers/       # Financial analysis components
+├── workers/         # Specialized worker modules (web_search.py)
 ├── workflows/       # Graph definitions and workflow
 ├── main.py          # Main entry point
 └── README.md        # Package documentation
@@ -79,4 +96,4 @@ The system supports multiple LLM providers:
 - DeepSeek (default)
 - OpenAI
 
-To switch providers, update the `default_llm` in `providers/llm.py`. 
+To switch providers, update the `default_llm` in `providers/llm.py`.

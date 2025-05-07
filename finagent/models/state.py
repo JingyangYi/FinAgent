@@ -16,6 +16,12 @@ class FinancialState(BaseModel):
     analysis_cashflow: Optional[str] = None
     analysis_mdna: Optional[str] = None
     
+    # Filled out by web_search
+    market_sentiment: Optional[str] = None
+    narrative_themes: Optional[str] = None
+    user_search_requirements: Optional[str] = None
+    user_search_results: Optional[str] = None
+    
     # User requirements for analysis
     income_requirements: Optional[str] = None
     cashflow_requirements: Optional[str] = None

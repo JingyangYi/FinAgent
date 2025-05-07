@@ -3,6 +3,8 @@ from langchain_core.runnables import RunnableLambda
 from finagent.models.state import FinancialState
 from finagent.workflows.nodes import (
     extract_title_node,
+    get_search_requirements_node,
+    web_search_node,
     extract_10k_sections_node,
     extract_10q_sections_node,
     get_analysis_requirements_node,
@@ -23,6 +25,8 @@ def create_financial_analysis_graph():
     
     # Add nodes
     workflow.add_node("extract_title", RunnableLambda(extract_title_node))
+    workflow.add_node("get_search_requirements", RunnableLambda(get_search_requirements_node))
+    workflow.add_node("web_search", RunnableLambda(web_search_node))
     workflow.add_node("extract_10_K", RunnableLambda(extract_10k_sections_node))
     workflow.add_node("extract_10_Q", RunnableLambda(extract_10q_sections_node))
     workflow.add_node("get_analysis_requirements", RunnableLambda(get_analysis_requirements_node))
@@ -31,9 +35,15 @@ def create_financial_analysis_graph():
     # Set up the workflow
     workflow.set_entry_point("extract_title")
     
-    # Add conditional routing based on file category
+    # Add search requirements node after title extraction
+    workflow.add_edge("extract_title", "get_search_requirements")
+    
+    # Add web search edge after getting search requirements
+    workflow.add_edge("get_search_requirements", "web_search")
+    
+    # Add conditional routing based on file category after web search
     workflow.add_conditional_edges(
-        "extract_title",
+        "web_search",
         route_by_category,
         {
             "10-K": "extract_10_K",
